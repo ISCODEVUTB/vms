@@ -1,9 +1,9 @@
-from vehicle import Vehicle
+from logic.vehicle import Vehicle
 
 
 class MaritimeVehicle(Vehicle):
 
-    def __init__(self, id_vehicle: int = "Id of vehicle", model: str = "Model of vehicle",
+    def __init__(self, id_vehicle: int = 1, model: str = "Model of vehicle",
                  description: str = "Description of vehicle", status: str = "Status of vehicle",
                  brand: str = "Brand of vehicle", type: str = "Vehicle type", weight: float = 1.0,
                  age: int = 0, price: float = 1.0, length: float = 1.0, weight_capacity: float = 1.0,
@@ -139,12 +139,12 @@ class MaritimeVehicle(Vehicle):
         :returns: string with land vehicle information.
         :rtype: str
         """
-        return '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11})'.format(self._id_vehicle,
+        return '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})'.format(self._id_vehicle,
                                                                                        self._model,
                                                                                        self._description, self._status,
                                                                                        self._brand, self._type,
                                                                                        self._weight, self._age,
-                                                                                       self._price,
+                                                                                       self._price, self._length,
                                                                                        self._weight_capacity,
                                                                                        self._engine_capacity,
                                                                                        self._distance_travelled,
@@ -157,7 +157,7 @@ class MaritimeVehicle(Vehicle):
                     self._type == other._type and self._weight == other._weight and self._age == other._age and
                     self._price == other._price and self._status == other._status and self._weight_capacity ==
                     other._weight_capacity and self._engine_capacity == other._engine_capacity and
-                    self._distance_travelled == other._distance_travelled)
+                    self._distance_travelled == other._distance_travelled and self._length == other._length)
         else:
             return False
 

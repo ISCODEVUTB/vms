@@ -1,11 +1,11 @@
-from vehicle import Vehicle
+from logic.vehicle import Vehicle
 
 
 class LandVehicle(Vehicle):
     """
     Class used to represent a land Vehicle
     """
-    def __init__(self, id_vehicle: int = "Id of vehicle", model: str = "Model of vehicle",
+    def __init__(self, id_vehicle: int = 1, model: str = "Model of vehicle",
                  description: str = "Description of vehicle", status: str = "Status of vehicle",
                  brand: str = "Brand of vehicle", type: str = "Vehicle type", weight: float = 1.0,
                  age: int = 0, price: float = 1.0, mileage: float = 0.0, cylinder_capability: float = 0.0,

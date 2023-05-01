@@ -5,7 +5,7 @@ class Vehicle(object):
     """
     Class used to represent a Vehicle
     """
-    def __init__(self, id_vehicle: int = "Id of vehicle", model: str = "Model of vehicle",
+    def __init__(self, id_vehicle: int = 1, model: str = "Model of vehicle",
                  description: str = "Description of vehicle", brand: str = "Brand of vehicle",
                  type: str = "Vehicle type", weight: float = 1.0, age: int = 0, price: float = 1.0,
                  status: str = "Status of vehicle"):
@@ -122,7 +122,7 @@ class Vehicle(object):
         :return: model
         :rtype: str
         """
-        return self._model
+        return self._brand
 
     @brand.setter
     def brand(self, brand):
