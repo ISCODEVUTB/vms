@@ -2,7 +2,7 @@ from Buyer import Buyer
 from datetime import datetime
 from Address import Address
 from Person import Person
-from Suplier import Suplier
+from Supplier import Supplier
 from Bill import Bill
 from Operator import Operator
 

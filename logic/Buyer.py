@@ -8,7 +8,7 @@ class Buyer(Person):
     class used to represent to buyer
     """
     def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 1,
-                 address: object = Address, permission: int = 0, buy_date: date = "buy_date"):
+                 address: object = Address(), permission: int = 0, buy_date: date = "buy_date"):
         """
         Buyer constructor object
         :param name: name of the buyer
@@ -66,3 +66,7 @@ class Buyer(Person):
             return super().__eq__(other) and self.__buy_date == other.__buy_date
         else:
             return False
+
+if __name__ == '__main__':
+    buyer = Buyer(10202, name = "David", last_name= "Carrero", contact= 3131500, address= Address(), permission= 1, buy_date= date.today())
+    print(buyer.__str__())

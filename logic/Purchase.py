@@ -7,8 +7,8 @@ class Purchase(object):
     """
     class used to represent purchase
     """
-    def __init__(self, id_purchase: int = 1, description: object = Vehicle, cost: float = 1.0, buyer: object = Buyer,
-                 seller: object = Person):
+    def __init__(self, id_purchase: int = 1, description: object = Vehicle(), cost: float = 1.0,
+                 buyer: object = Buyer(), seller: object = Person()):
         """
         Purchase constructor object
         :param id_purchase: purchase identifier
@@ -145,3 +145,8 @@ class Purchase(object):
         """
         return (self.__id_purchase == other.__id_purchase and self.__description == other.__description and
                 self.__cost == other.__cost and self.__buyer == other.__buyer and self.__seller == other.__seller)
+
+
+if __name__ == '__main__':
+    purchase = Purchase(10202, description=Vehicle(), cost=20000, buyer=Buyer(), seller=Person())
+    print(purchase.__str__())

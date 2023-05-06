@@ -167,3 +167,8 @@ class Bill(object):
                     self.__payment_method == other.__payment_method)
         else:
             return False
+
+
+if __name__ == '__main__':
+    bill1 = Bill(10202, "heavy vehicles", Person(), Buyer(), Address(), PaymentMethod())
+    print(bill1.__str__())

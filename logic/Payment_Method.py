@@ -47,3 +47,8 @@ class PaymentMethod(object):
             return self.__payment_method == other.__payment_method
         else:
             return False
+
+
+if __name__ == '__main__':
+    payment_method1 = PaymentMethod("Cash")
+    print(payment_method1.__str__())
