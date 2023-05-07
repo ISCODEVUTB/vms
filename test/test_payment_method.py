@@ -11,7 +11,7 @@ class TestPaymentMethod(unittest.TestCase):
     def test_payment_method(self):
         self.assertEqual(self.PaymentMethod.payment_method, "payment method")
 
-    def test_(self):
+    def test__str__(self):
         self.assertEqual(self.PaymentMethod.__str__(), '({0})'.format("payment method"))
 
 

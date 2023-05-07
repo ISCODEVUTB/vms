@@ -31,7 +31,7 @@ class TestBill(unittest.TestCase):
     def test_payment_method(self):
         self.assertIsInstance(self.Bill.payment_method, PaymentMethod)
 
-    def test_(self):
+    def test__str__(self):
         self.assertEqual(self.Bill.__str__(), '({0}, {1}, {2}, {3}, {4}, {5})'.format(1, Purchase().__str__(),
                                                                                       Person().__str__(),
                                                                                       Buyer().__str__(),

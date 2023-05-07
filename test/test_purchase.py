@@ -26,7 +26,7 @@ class TestPurchase(unittest.TestCase):
     def test_seller(self):
         self.assertIsInstance(self.Purchase.seller, Person)
 
-    def test_(self):
+    def test__str__(self):
         self.assertEqual(self.Purchase.__str__(), '({0},{1},{2},{3},{4})'.format(1, Vehicle(), 1.0, Buyer(), Person()))
 
 

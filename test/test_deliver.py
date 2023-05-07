@@ -41,7 +41,7 @@ class TestDeliver(unittest.TestCase):
     def test_bill(self):
         self.assertIsInstance(self.Deliver.bill, Bill)
 
-    def test_(self):
+    def test__str__(self):
         self.assertEqual(self.Deliver.__str__(), '({0},{1},{2},{3},{4},{5},{6},{7},{8})'.format(1, date, Buyer(),
                                                                                                 Address, Operator(),
                                                                                                 Address(), Supplier(),
