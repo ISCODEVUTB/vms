@@ -233,8 +233,8 @@ class Deliver(object):
             return False
 
 if __name__ == '__main__':
-    Deliver1= Deliver(12020, date, Buyer,Address, Operator,Address, Suplier, Person, Bill)
-    Deliver2 = Deliver(12022, date, Buyer, Address, Operator, Address, Suplier, Person, Bill)
+    Deliver1= Deliver(12020, date(), Buyer(),Address(), Operator(),Address(), Supplier(), Person(), Bill())
+    Deliver2 = Deliver(12022, date(), Buyer(), Address(), Operator(), Address(), Supplier(), Person(), Bill())
     print("\nDeliver1: ")
     print(Deliver1.__str__())
 

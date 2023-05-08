@@ -1,16 +1,16 @@
-from Buyer import Buyer
-from Purchase import Purchase
-from Address import Address
-from Payment_Method import PaymentMethod
-from Person import Person
+from logic.Buyer import Buyer
+from logic.Purchase import Purchase
+from logic.Address import Address
+from logic.Payment_Method import PaymentMethod
+from logic.Person import Person
 
 
 class Bill(object):
     """
     class used to represent a Bill
     """
-    def __init__(self, id_bill: int = 1, description_purchase: object = Purchase, seller: object = Person,
-                 buyer: object = Buyer, address_buyer: object = Address, payment_method: object = PaymentMethod):
+    def __init__(self, id_bill: int = 1, description_purchase: object = Purchase(), seller: object = Person(),
+                 buyer: object = Buyer(), address_buyer: object = Address(), payment_method: object = PaymentMethod()):
         """
         Bill constructor object
         :param id_bill: id of bill

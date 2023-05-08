@@ -1,5 +1,5 @@
-from Person import Person
-from Address import Address
+from logic.Person import Person
+from logic.Address import Address
 from datetime import date
 
 

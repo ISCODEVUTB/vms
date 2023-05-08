@@ -1,6 +1,6 @@
-from vehicle import Vehicle
-from Buyer import Buyer
-from Person import Person
+from logic.vehicle import Vehicle
+from logic.Buyer import Buyer
+from logic.Person import Person
 
 
 class Purchase(object):
