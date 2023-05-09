@@ -1,6 +1,6 @@
 import unittest
 from logic.Purchase import Purchase
-from logic.vehicle import Vehicle
+from logic.Vehicle import Vehicle
 from logic.Buyer import Buyer
 from logic.Person import Person
 

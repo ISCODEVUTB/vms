@@ -1,5 +1,5 @@
 import unittest
-from logic.land_vehicle import LandVehicle
+from logic.Land_Vehicle import LandVehicle
 
 
 class TestLandVehicle(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from logic.maritime_vehicle import MaritimeVehicle
+from logic.Maritime_Vehicle import MaritimeVehicle
 
 
 class TestMaritimeVehicle(unittest.TestCase):
@@ -52,6 +52,7 @@ class TestMaritimeVehicle(unittest.TestCase):
                          '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})'.format(
                              1, "Model of vehicle", "Description of vehicle", "New", "Brand of vehicle", "Vehicle type",
                              1.0, 0, 1.0, 1.0, 1.0, 1.0, 0.0))
+
 
 if __name__ == '__main__':
     unittest.main()

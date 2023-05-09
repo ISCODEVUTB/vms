@@ -2,7 +2,7 @@ import unittest
 from datetime import date
 from logic.Address import Address
 from logic.Buyer import Buyer
-from test.test_Person import TestPerson
+from test_Person import TestPerson
 
 
 class TestBuyer(TestPerson):
