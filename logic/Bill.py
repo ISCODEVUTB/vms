@@ -1,8 +1,8 @@
-from logic.Buyer import Buyer
-from logic.Purchase import Purchase
-from logic.Address import Address
-from logic.Payment_Method import PaymentMethod
-from logic.Person import Person
+from Buyer import Buyer
+from Purchase import Purchase
+from Address import Address
+from Payment_Method import PaymentMethod
+from Person import Person
 
 
 class Bill(object):

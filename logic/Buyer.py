@@ -1,5 +1,5 @@
-from logic.Person import Person
-from logic.Address import Address
+from Person import Person
+from Address import Address
 from datetime import date
 
 
@@ -8,7 +8,7 @@ class Buyer(Person):
     class used to represent to buyer
     """
     def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 1,
-                 address: object = Address(), permission: int = 0, buy_date: date = "buy_date"):
+                 address: object = Address(), permission: int = 0, buy_date: date = date.today()):
         """
         Buyer constructor object
         :param name: name of the buyer
@@ -43,7 +43,7 @@ class Buyer(Person):
         :param buy_date: the date of purchase
         :type: date
         """
-        self.__buy_date = date if buy_date is None else buy_date
+        self.__buy_date = date.today() if buy_date is None else buy_date
 
     def __str__(self):
         """
@@ -67,6 +67,8 @@ class Buyer(Person):
         else:
             return False
 
+
 if __name__ == '__main__':
-    buyer = Buyer(10202, name = "David", last_name= "Carrero", contact= 3131500, address= Address(), permission= 1, buy_date= date.today())
+    buyer = Buyer(10202, name="David", last_name="Carrero", contact=3131500, address=Address(), permission=1,
+                  buy_date=date.today())
     print(buyer.__str__())
