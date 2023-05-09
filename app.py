@@ -3,7 +3,7 @@ from fastapi import FastAPI, Query
 from starlette.middleware.cors import CORSMiddleware
 
 from logic.vehicle_controller import VehicleController
-from logic.vehicle import Vehicle
+from logic.Vehicle import Vehicle
 
 app = FastAPI()
 vh_c = VehicleController()
