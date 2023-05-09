@@ -148,14 +148,14 @@ class AirVehicle(Vehicle):
 
 
 if __name__ == '__main__':
-    AirVehicle1 = AirVehicle()
-    AirVehicle2 = AirVehicle()
-    print(AirVehicle1)
-    print(AirVehicle2)
+    air_vehicle_1 = AirVehicle()
+    air_vehicle_2 = AirVehicle()
+    print(air_vehicle_1)
+    print(air_vehicle_1)
 
-    if AirVehicle1 == AirVehicle2:
-        print(f'The vehicle with id "{AirVehicle1.id_vehicle}" '
-              f'is equal to the vehicle with id "{AirVehicle2.id_vehicle}"')
+    if air_vehicle_1 == air_vehicle_2:
+        print(f'The vehicle with id "{air_vehicle_1.id_vehicle}" '
+              f'is equal to the vehicle with id "{air_vehicle_2.id_vehicle}"')
     else:
-        print(f'The vehicle with id "{AirVehicle1.id_vehicle}" is different to the vehicle '
-              f'"{AirVehicle2.id_vehicle}"')
+        print(f'The vehicle with id "{air_vehicle_1.id_vehicle}" is different to the vehicle '
+              f'"{air_vehicle_2.id_vehicle}"')

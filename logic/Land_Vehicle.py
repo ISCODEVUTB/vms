@@ -142,13 +142,13 @@ class LandVehicle(Vehicle):
 
 
 if __name__ == '__main__':
-    LandVehicle1 = LandVehicle()
-    LandVehicle2 = LandVehicle()
-    print(LandVehicle1)
-    print(LandVehicle2)
+    land_vehicle_1 = LandVehicle()
+    land_vehicle_2 = LandVehicle()
+    print(land_vehicle_1)
+    print(land_vehicle_2)
 
-    if LandVehicle1 == LandVehicle2:
-        print(f'The vehicle with id "{LandVehicle1.id_vehicle}" is equal to "{LandVehicle2.id_vehicle}"')
+    if land_vehicle_1 == land_vehicle_2:
+        print(f'The vehicle with id "{land_vehicle_1.id_vehicle}" is equal to "{land_vehicle_2.id_vehicle}"')
     else:
-        print(f'The vehicle with id "{LandVehicle1.id_vehicle}"  is different '
-              f'"{LandVehicle2.id_vehicle}"')
+        print(f'The vehicle with id "{land_vehicle_1.id_vehicle}"  is different '
+              f'"{land_vehicle_2.id_vehicle}"')

@@ -170,5 +170,5 @@ class Bill(object):
 
 
 if __name__ == '__main__':
-    bill1 = Bill(10202, "heavy vehicles", Person(), Buyer(), Address(), PaymentMethod())
-    print(bill1.__str__())
+    bill_1 = Bill(10202, "heavy vehicles", Person(), Buyer(), Address(), PaymentMethod())
+    print(bill_1.__str__())

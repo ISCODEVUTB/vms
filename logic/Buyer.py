@@ -7,8 +7,8 @@ class Buyer(Person):
     """
     class used to represent to buyer
     """
-    def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 1,
-                 address: object = Address(), permission: int = 0, buy_date: date = date.today()):
+    def __init__(self, dni: int = 1, name: str = "Name", last_name: str = "Last name", contact: int = 1,
+                 address: object = Address(), permission: int = 0, buy_date: date = date):
         """
         Buyer constructor object
         :param name: name of the buyer
@@ -25,7 +25,7 @@ class Buyer(Person):
         :type: int
         """
         super().__init__(dni, name, last_name, contact, address, permission)
-        self.__buy_date = date.today() if buy_date is None else buy_date
+        self.__buy_date = date if buy_date is None else buy_date
 
     @property
     def buy_date(self) -> date:
@@ -43,7 +43,7 @@ class Buyer(Person):
         :param buy_date: the date of purchase
         :type: date
         """
-        self.__buy_date = date.today() if buy_date is None else buy_date
+        self.__buy_date = date if buy_date is None else buy_date
 
     def __str__(self):
         """
@@ -51,7 +51,7 @@ class Buyer(Person):
         :returns: string with the purchase buyer information
         :rtype: str
         """
-        return '({0},{1},{2},{3},{4},{5},{6})'.format(self._dni, self._name, self._last_name,
+        return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self._dni, self._name, self._last_name,
                                                       self._contact, self._address, self._permission,
                                                       self.__buy_date)
 

@@ -50,5 +50,5 @@ class PaymentMethod(object):
 
 
 if __name__ == '__main__':
-    payment_method1 = PaymentMethod("Cash")
-    print(payment_method1.__str__())
+    payment_method_1 = PaymentMethod("Cash")
+    print(payment_method_1.__str__())

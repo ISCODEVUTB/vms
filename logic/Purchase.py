@@ -124,8 +124,8 @@ class Purchase(object):
         :returns: string with the purchase information
         :rtype: str
         """
-        return '({0},{1},{2},{3},{4})'.format(self.__id_purchase, str(self.__description),
-                                              self.__cost, str(self.__buyer), str(self.__seller))
+        return '({0}, {1}, {2}, {3}, {4})'.format(self.__id_purchase, str(self.__description),
+                                                  self.__cost, str(self.__buyer), str(self.__seller))
 
     def __eq__(self, other):
         """

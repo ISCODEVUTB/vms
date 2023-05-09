@@ -164,14 +164,14 @@ class MaritimeVehicle(Vehicle):
 
 
 if __name__ == '__main__':
-    MaritimeVehicle1 = MaritimeVehicle()
-    MaritimeVehicle2 = MaritimeVehicle()
-    print(MaritimeVehicle1)
-    print(MaritimeVehicle2)
+    maritime_vehicle_1 = MaritimeVehicle()
+    maritime_vehicle_2 = MaritimeVehicle()
+    print(maritime_vehicle_1)
+    print(maritime_vehicle_2)
 
-    if MaritimeVehicle1 == MaritimeVehicle2:
-        print(f'the vehicle with id: "{MaritimeVehicle1.id_vehicle}" is equal to the vehicle with id'
-              f' "{MaritimeVehicle2.id_vehicle}"')
+    if maritime_vehicle_1 == maritime_vehicle_1:
+        print(f'the vehicle with id: "{maritime_vehicle_1.id_vehicle}" is equal to the vehicle with id'
+              f' "{maritime_vehicle_2.id_vehicle}"')
     else:
-        print(f'the vehicle with id "{MaritimeVehicle1.id_vehicle}" is different to the vehicle with id '
-              f'"{MaritimeVehicle2.id_vehicle}"')
+        print(f'the vehicle with id "{maritime_vehicle_1.id_vehicle}" is different to the vehicle with id '
+              f'"{maritime_vehicle_2.id_vehicle}"')

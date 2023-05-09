@@ -1,18 +1,19 @@
 from logic.Buyer import Buyer
-from datetime import datetime
+from datetime import date
 from logic.Address import Address
 from logic.Person import Person
-from logic.Suplier import Suplier
+from logic.Supplier import Supplier
 from logic.Bill import Bill
-from logic.Person import Operator
-from datetime import date
+from logic.Operator import Operator
+from logic.Operator import Operator
+
 
 
 class Deliver(object):
     """
     class used to represent the delivery
     """
-    def __init__(self, id_deliver: int = 1, date_t: date = date.today(), buyer: object = Buyer(),
+    def __init__(self, id_deliver: int = 1, date_t: date = date, buyer: object = Buyer(),
                  buyer_add: object = Address(), operator: object = Operator(), operator_add: object = Address(),
                  conveyor: object = Supplier(), contact: object = Person(), bill: object = Bill()):
         """
@@ -37,12 +38,12 @@ class Deliver(object):
         :type bill: object
         """
         self.__id_deliver = 1 if id_deliver is None else id_deliver
-        self.__date = date.today() if datetime is None else date_t
+        self.__date = date if date_t is None else date_t
         self.__buyer = Buyer() if buyer is None else buyer
         self.__buyer_add = Address() if buyer_add is None else buyer_add
         self.__operator = Operator() if operator is None else operator
         self.__operator_add = Address() if operator_add is None else operator_add
-        self.__conveyor = Suplier() if conveyor is None else conveyor
+        self.__conveyor = Supplier() if conveyor is None else conveyor
         self.__contact = Person() if contact is None else contact
         self.__bill = Bill() if bill is None else bill
 
@@ -80,7 +81,7 @@ class Deliver(object):
         :param date_t: deadline
         :type date_t: datetime
         """
-        self.__date = date.today() if datetime is None else date_t
+        self.__date = date if datetime is None else date_t
 
     @property
     def buyer(self) -> Buyer():
@@ -155,7 +156,7 @@ class Deliver(object):
         self.__operator_add = Address() if operator_add is None else operator_add
 
     @property
-    def conveyor(self) -> Suplier():
+    def conveyor(self) -> Supplier():
         """
         Return the information of conveyor
         :returns: the conveyor data
@@ -164,13 +165,13 @@ class Deliver(object):
         return self.__conveyor
 
     @conveyor.setter
-    def conveyor(self, conveyor: Suplier):
+    def conveyor(self, conveyor: Supplier):
         """
         The information of conveyor
         :param conveyor: the conveyor data
         :type: object
         """
-        self.__conveyor = Suplier() if conveyor is None else conveyor
+        self.__conveyor = Supplier() if conveyor is None else conveyor
 
     @property
     def contact(self) -> Person:
@@ -214,7 +215,7 @@ class Deliver(object):
         :returns: string with the delivery information
         :rtype: str
         """
-        return '({0},{1},{2},{3},{4},{5},{6},{7},{8})'.format(self.__id_deliver, self.__date, self.__buyer,
+        return '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})'.format(self.__id_deliver, self.__date, self.__buyer,
                                                               self.__buyer_add, self.__operator, self.__operator_add,
                                                               self.__conveyor, self.__contact, self.__bill)
 
@@ -236,9 +237,9 @@ class Deliver(object):
 
 
 if __name__ == '__main__':
-    Deliver1 = Deliver(12020, date.today(), Buyer(), Address(), Operator(), Address(), Supplier(), Person(), Bill())
-    Deliver2 = Deliver(12022, date.today(), Buyer(), Address(), Operator(), Address(), Supplier(), Person(), Bill())
+    deliver_1 = Deliver(12020, date.today(), Buyer(), Address(), Operator(), Address(), Supplier(), Person(), Bill())
+    deliver_2 = Deliver(12022, date.today(), Buyer(), Address(), Operator(), Address(), Supplier(), Person(), Bill())
     print("\nDeliver1: ")
-    print(Deliver1.__str__())
+    print(deliver_1.__str__())
 
-    print(Deliver1.__eq__(Deliver2))
+    print(deliver_1.__eq__(deliver_2))

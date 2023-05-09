@@ -225,13 +225,13 @@ class Vehicle(object):
 
 
 if __name__ == '__main__':
-    vehicle1 = Vehicle(2345623, "Chevrolet Spark")
-    vehicle2 = Vehicle()
+    vehicle_1 = Vehicle(2345623, "Chevrolet Spark")
+    vehicle_2 = Vehicle()
 
-    print(vehicle1)
-    print(vehicle2)
+    print(vehicle_1)
+    print(vehicle_2)
 
-    if vehicle1 == vehicle2:
-        print(f'the vehicle with id: "{vehicle1.id_vehicle}" is equal to "{vehicle2.id_vehicle}"')
+    if vehicle_1 == vehicle_2:
+        print(f'the vehicle with id: "{vehicle_1.id_vehicle}" is equal to "{vehicle_2.id_vehicle}"')
     else:
-        print(f'the vehicle with id "{vehicle1.id_vehicle}" is different to "{vehicle2.id_vehicle}"')
+        print(f'the vehicle with id "{vehicle_1.id_vehicle}" is different to "{vehicle_2.id_vehicle}"')

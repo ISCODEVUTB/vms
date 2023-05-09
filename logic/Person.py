@@ -1,4 +1,3 @@
-
 from logic.Address import Address
 
 
@@ -7,10 +6,10 @@ class Person(object):
     Class used to represent a Person
     """
 
-    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = 'LastName', contact: int = 1,
+    def __init__(self, dni: int = 1, name: str = "Name", last_name: str = "Last name", contact: int = 0,
                  address: object = Address(), permission: int = 0):
-        """ Person constructor object.
 
+        """ Person constructor object.
         :param dni: id of person.
         :type dni: int
         :param name: name of person.
@@ -27,23 +26,23 @@ class Person(object):
         :rtype: Person
         """
         self._dni = 1 if dni is None else dni
-        self._name = 'name' if name is None else name
-        self._last_name = 'last_name' if last_name is None else last_name
-        self._contact = Person() if contact is None else contact
+        self._name = "Name" if name is None else name
+        self._last_name = "Last name" if last_name is None else last_name
+        self._contact = 0 if contact is None else contact
         self._address = Address() if address is None else address
-        self._permission = permission
+        self._permission = 0 if permission is None else permission
 
     @property
-    def id_person(self) -> int:
+    def dni(self) -> int:
         """
-        Returns id person of the person.
-          :returns: id of person.
+        Returns dni of the person.
+          :returns: dni of person.
           :rtype: int
         """
         return self._dni
 
-    @id_person.setter
-    def id_person(self, dni: int):
+    @dni.setter
+    def dni(self, dni: int):
         """
         The id of the person.
         :param dni: id of person.
@@ -65,7 +64,7 @@ class Person(object):
         :param name: name of person.
         :type: str
         """
-        self._name = 'name' if name is None else name
+        self._name = "Name" if name is None else name
 
     @property
     def last_name(self) -> str:
@@ -81,7 +80,7 @@ class Person(object):
         :param last_name: last name of person.
         :type: str
         """
-        self._last_name = 'last_name' if last_name is None else last_name
+        self._last_name = "Last name" if last_name is None else last_name
 
     @property
     def contact(self) -> int:
@@ -95,11 +94,11 @@ class Person(object):
     @contact.setter
     def contact(self, contact: int):
         """
-      The contact of the person.
-      :param contact: contact of the person
-      :type: int
-      """
-        self._contact = Person() if contact is None else contact
+        The contact of the person.
+        :param contact: contact of the person
+        :type: int
+        """
+        self._contact = 0 if contact is None else contact
 
     @property
     def address(self) -> Address():
@@ -135,7 +134,7 @@ class Person(object):
         :param permission: permission of person.
         :type: int
         """
-        self._permission = permission
+        self._permission = 0 if permission is None else permission
 
     def __str__(self):
         """
@@ -143,31 +142,18 @@ class Person(object):
           :returns: sting person
           :rtype: str
         """
-        return '({0}, {1}, {2}, {3}, {4}, {5})'.format(self.id_person, self.name, self.last_name, self.contact,
-                                                       self.address, self.permission)
-
-
-class User(Person):
-    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
-                 address: Address = Address(), permission=0):
-
-        super().__init__(dni, name, last_name, contact, address, permission)
-        self.permission = permission
-
-
-class Operator(Person):
-    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
-                 address: Address = Address(), permission=1):
-
-        super().__init__(dni, name, last_name, contact, address, permission)
-        self.permission = permission
+        return '({0}, {1}, {2}, {3}, {4}, {5})'.format(self._dni, self._name, self._last_name, self._contact,
+                                                       self._address, self._permission)
 
 
 if __name__ == '__main__':
-    person1 = Person(dni=1234567890, name="Luis", last_name="Pinto", contact=3155264684,
-                     address=Address(), permission=1)
-    print("\nPerson:")
-    print(person1)
+    person_1 = Person(dni=1234567890, name="Luis", last_name="Pinto", contact=3155264684,
+                      address=Address(), permission=1)
+    person_2 = Person(dni=1234567890)
+    print(person_1)
+    print(person_2)
 
-    person2 = Person()
-    print(person2)
+    if person_1.dni == person_2.dni:
+        print(f'The person with id "{person_1.dni}" is equal to the person with id "{person_2.dni}"')
+    else:
+        print(f'The person with id "{person_1.dni}" is different to the person with id "{person_2.dni}"')
