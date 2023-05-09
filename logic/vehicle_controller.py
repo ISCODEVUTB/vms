@@ -1,6 +1,6 @@
 import json
 import os
-from vms.logic.vehicle import Vehicle
+from logic.Vehicle import Vehicle
 PATH = os.getcwd()
 DIR_DATA = PATH + '{0}data{0}'.format(os.sep)
 

@@ -1,6 +1,6 @@
-from vehicle import Vehicle
-from Buyer import Buyer
-from Person import Person
+from logic.Buyer import Buyer
+from logic.Person import Person
+from logic.Vehicle import Vehicle
 
 
 class Purchase(object):
@@ -23,10 +23,10 @@ class Purchase(object):
         :type: object
         """
         self.__id_purchase = 1 if id_purchase is None else id_purchase
-        self.__description = Vehicle if description is None else description
+        self.__description = Vehicle() if description is None else description
         self.__cost = 1.0 if cost is None else cost
-        self.__buyer = Buyer if buyer is None else buyer
-        self.__seller = Person if seller is None else seller
+        self.__buyer = Buyer() if buyer is None else buyer
+        self.__seller = Person() if seller is None else seller
 
     @property
     def id_purchase(self) -> int:
@@ -62,7 +62,7 @@ class Purchase(object):
         :param description: the vehicle information
         :type: object
         """
-        self.__description = Vehicle if description is None else description
+        self.__description = Vehicle() if description is None else description
 
     @property
     def cost(self) -> float:
@@ -98,7 +98,7 @@ class Purchase(object):
         :param buyer: the buyer information
         :type: object
         """
-        self.__buyer = Buyer if buyer is None else buyer
+        self.__buyer = Buyer() if buyer is None else buyer
 
     @property
     def seller(self) -> Person():
@@ -116,16 +116,7 @@ class Purchase(object):
         :param seller: the seller information
         :type: object
         """
-        self.__seller = Person if seller is None else seller
-
-    def import_regulations(self) -> str:
-        pass
-
-    def traceability(self) -> str:
-        pass
-
-    def calculate(self) -> float:
-        pass
+        self.__seller = Person() if seller is None else seller
 
     def __str__(self) -> str:
         """
@@ -133,8 +124,8 @@ class Purchase(object):
         :returns: string with the purchase information
         :rtype: str
         """
-        return '({0},{1},{2},{3},{4})'.format(self.__id_purchase, self.__description,
-                                              self.__cost, self.__buyer, self.__seller)
+        return '({0},{1},{2},{3},{4})'.format(self.__id_purchase, str(self.__description),
+                                              self.__cost, str(self.__buyer), str(self.__seller))
 
     def __eq__(self, other):
         """

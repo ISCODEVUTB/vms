@@ -4,7 +4,7 @@ class Address(object):
     Class used to represent an Address
     """
 
-    def __init__(self, house_number: int = 1, street: str = 'street', apartment: int = 0, postal_code: str = '00000',
+    def __init__(self, house_number: int = 1, apartment: int = 0, street: str = 'street', postal_code: str = '00000',
                  locality: str = 'locality', department: str = 'department', country: str = 'country'):
         """ Address constructor object.
 
@@ -27,13 +27,13 @@ class Address(object):
         :returns: Address object
         :rtype: Address
         """
-        self._house_number = house_number
-        self._apartment = apartment
-        self._street = street
-        self._Postal_code = postal_code
-        self._locality = locality
-        self._department = department
-        self._country = country
+        self.__house_number = house_number
+        self.__apartment = apartment
+        self.__street = street
+        self.__postal_code = postal_code
+        self.__locality = locality
+        self.__department = department
+        self.__country = country
 
     @property
     def house_number(self) -> int:
@@ -41,7 +41,7 @@ class Address(object):
           :returns: house number of address.
           :rtype: int
         """
-        return self._house_number
+        return self.__house_number
 
     @house_number.setter
     def house_number(self, house_number: int):
@@ -50,7 +50,7 @@ class Address(object):
         :param house_number: house number of the address.
         :type: int
         """
-        self._house_number = house_number
+        self.__house_number = house_number
 
     @property
     def apartment(self) -> int:
@@ -58,7 +58,7 @@ class Address(object):
           :returns: apartment number of address.
           :rtype: int
         """
-        return self._apartment
+        return self.__apartment
 
     @apartment.setter
     def apartment(self, apartment: int):
@@ -67,7 +67,7 @@ class Address(object):
         :param apartment: apartment number of the address.
         :type: int
         """
-        self._apartment = apartment
+        self.__apartment = apartment
 
     @property
     def street(self) -> str:
@@ -76,52 +76,52 @@ class Address(object):
           :returns: name of street of address.
           :rtype: str
         """
-        return self._street
+        return self.__street
 
     @street.setter
-    def name(self, street: str):
+    def street(self, street: str):
         """
         The name of street of the address.
         :param street: name of address.
         :type: str
         """
-        self._street = street
+        self.__street = street
 
     @property
-    def city(self) -> str:
+    def postal_code(self) -> str:
         """
         Returns the postal_code of the address.
           :returns: last postal_code of address.
           :rtype: str
         """
-        return self._Postal_code
+        return self.__postal_code
 
-    @city.setter
-    def city(self, city: str):
+    @postal_code.setter
+    def postal_code(self, postal_code: str):
         """
         The postal_code of the address.
-        :param city: postal_code of address.
+        :param postal_code: postal_code of address.
         :type: str
         """
-        self._Postal_code = city
+        self.__postal_code = postal_code
 
     @property
-    def state(self) -> str:
+    def locality(self) -> str:
         """
       Returns the locality of the address.
         :returns: locality of address.
         :rtype: str
       """
-        return self._locality
+        return self.__locality
 
-    @state.setter
-    def state(self, state: str):
+    @locality.setter
+    def locality(self, locality: str):
         """
         The locality of the address.
-      :param state: locality of the address
+      :param locality: locality of the address
       :type: str
       """
-        self.state = state
+        self.__locality = locality
 
     @property
     def department(self) -> str:
@@ -129,7 +129,7 @@ class Address(object):
           :returns: department of address.
           :rtype: str
         """
-        return self._department
+        return self.__department
 
     @department.setter
     def department(self, department: str):
@@ -138,7 +138,7 @@ class Address(object):
         :param department: department of the address.
         :type: int
         """
-        self._department = department
+        self.__department = department
 
     @property
     def country(self) -> str:
@@ -147,7 +147,7 @@ class Address(object):
             :returns: country of address.
             :rtype: str
       """
-        return self._country
+        return self.__country
 
     @country.setter
     def country(self, country: str):
@@ -156,7 +156,7 @@ class Address(object):
       :param country: country of the address
       :type: str
       """
-        self.country = country
+        self.__country = country
 
     def __str__(self):
         """
@@ -164,13 +164,14 @@ class Address(object):
           :returns: sting person
           :rtype: str
         """
-        return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.house_number, self.street, self.apartment,
-                                                            self.city, self.state, self.department, self.country)
+        return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.__house_number, self.__street, self.__apartment,
+                                                            self.__postal_code, self.__locality, self.__department,
+                                                            self.__country)
 
 
 if __name__ == '__main__':
-    address1 = Address(house_number=7, street="San martin", apartment=1001, postal_code="00045", locality="localidad",
-                       department="Bolivar",country="Colombia")
+    address1 = Address(house_number=7, street="San martin", apartment=1001, postal_code="00045", locality="locality",
+                       department="Bolivar", country="Colombia")
     print("\nAddress:")
     address1.name = "address1"
     print(address1)

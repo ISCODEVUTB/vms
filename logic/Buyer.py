@@ -1,5 +1,5 @@
-from Person import Person
-from Address import Address
+from logic.Person import Person
+from logic.Address import Address
 from datetime import date
 
 
@@ -25,7 +25,7 @@ class Buyer(Person):
         :type: int
         """
         super().__init__(dni, name, last_name, contact, address, permission)
-        self.__buy_date = date if buy_date is None else buy_date
+        self.__buy_date = date.today() if buy_date is None else buy_date
 
     @property
     def buy_date(self) -> date:

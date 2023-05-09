@@ -1,8 +1,8 @@
-from Buyer import Buyer
-from Purchase import Purchase
-from Address import Address
-from Payment_Method import PaymentMethod
-from Person import Person
+from logic.Buyer import Buyer
+from logic.Purchase import Purchase
+from logic.Address import Address
+from logic.Payment_Method import PaymentMethod
+from logic.Person import Person
 
 
 class Bill(object):
@@ -30,11 +30,11 @@ class Bill(object):
         """
 
         self.__id_bill = 1 if id_bill is None else id_bill
-        self.__description_purchase = Purchase if description_purchase is None else description_purchase
-        self.__seller = Person if seller is None else seller
-        self.__buyer = buyer if buyer is None else buyer
-        self.__address_buyer = Address if address_buyer is None else address_buyer
-        self.__payment_method = PaymentMethod if payment_method is None else payment_method
+        self.__description_purchase = Purchase() if description_purchase is None else description_purchase
+        self.__seller = Person() if seller is None else seller
+        self.__buyer = Buyer() if buyer is None else buyer
+        self.__address_buyer = Address() if address_buyer is None else address_buyer
+        self.__payment_method = PaymentMethod() if payment_method is None else payment_method
 
     @property
     def id_bill(self) -> int:
@@ -70,7 +70,7 @@ class Bill(object):
         :param description_purchase: description purchase
         :type: object
         """
-        self.__description_purchase = Purchase if description_purchase is None else description_purchase
+        self.__description_purchase = Purchase() if description_purchase is None else description_purchase
 
     @property
     def seller(self) -> Person():
@@ -88,7 +88,7 @@ class Bill(object):
         :param seller: seller
         :type: object
         """
-        self.__seller = Person if seller is None else seller
+        self.__seller = Person() if seller is None else seller
 
     @property
     def buyer(self) -> Buyer():
@@ -106,7 +106,7 @@ class Bill(object):
         :param buyer: buyer
         :type: object
         """
-        self.__buyer = Buyer if buyer is None else buyer
+        self.__buyer = Buyer() if buyer is None else buyer
 
     @property
     def address_buyer(self) -> Address():
@@ -124,7 +124,7 @@ class Bill(object):
         :param address_buyer: buyer's address
         :type: object
         """
-        self.__address_buyer = Address if address_buyer is None else address_buyer
+        self.__address_buyer = Address() if address_buyer is None else address_buyer
 
     @property
     def payment_method(self) -> PaymentMethod():
@@ -142,7 +142,7 @@ class Bill(object):
         :param payment_method: the method of payment for the purchase
         :type: object
         """
-        self.__payment_method = PaymentMethod if payment_method is None else payment_method
+        self.__payment_method = PaymentMethod() if payment_method is None else payment_method
 
     def __str__(self):
         """

@@ -1,5 +1,5 @@
 
-from Address import Address
+from logic.Address import Address
 
 
 class Person(object):
@@ -7,8 +7,8 @@ class Person(object):
     Class used to represent a Person
     """
 
-    def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
-                 address: Address = Address, permission: int = 0):
+    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = 'LastName', contact: int = 1,
+                 address: object = Address(), permission: int = 0):
         """ Person constructor object.
 
         :param dni: id of person.
@@ -26,11 +26,11 @@ class Person(object):
         :returns: Person: object
         :rtype: Person
         """
-        self._dni = dni
-        self._name = name
-        self._last_name = last_name
-        self._contact = contact
-        self._address = address
+        self._dni = 1 if dni is None else dni
+        self._name = 'name' if name is None else name
+        self._last_name = 'last_name' if last_name is None else last_name
+        self._contact = Person() if contact is None else contact
+        self._address = Address() if address is None else address
         self._permission = permission
 
     @property
@@ -43,13 +43,13 @@ class Person(object):
         return self._dni
 
     @id_person.setter
-    def id_person(self, id_person: int):
+    def id_person(self, dni: int):
         """
         The id of the person.
-        :param id_person: id of person.
+        :param dni: id of person.
         :type: int
         """
-        self._dni = id_person
+        self._dni = 1 if dni is None else dni
 
     @property
     def name(self) -> str:
@@ -65,7 +65,7 @@ class Person(object):
         :param name: name of person.
         :type: str
         """
-        self._name = name
+        self._name = 'name' if name is None else name
 
     @property
     def last_name(self) -> str:
@@ -81,7 +81,7 @@ class Person(object):
         :param last_name: last name of person.
         :type: str
         """
-        self._last_name = last_name
+        self._last_name = 'last_name' if last_name is None else last_name
 
     @property
     def contact(self) -> int:
@@ -99,10 +99,10 @@ class Person(object):
       :param contact: contact of the person
       :type: int
       """
-        self.contact = contact
+        self._contact = Person() if contact is None else contact
 
     @property
-    def address(self) -> object:
+    def address(self) -> Address():
         """
         Returns address of the person.
           :returns: address of person.
@@ -111,13 +111,13 @@ class Person(object):
         return self._address
 
     @address.setter
-    def address(self, address: object):
+    def address(self, address: Address):
         """
         The address of the person.
         :param address: address of person.
         :type: object
         """
-        self._address = address
+        self._address = Address() if address is None else address
 
     @property
     def permission(self) -> int:
@@ -144,27 +144,28 @@ class Person(object):
           :rtype: str
         """
         return '({0}, {1}, {2}, {3}, {4}, {5})'.format(self.id_person, self.name, self.last_name, self.contact,
-                                                  self.address, self.permission)
+                                                       self.address, self.permission)
 
 
 class User(Person):
-    def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
-                 address: Address = Address(), permission = 0):
+    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
+                 address: Address = Address(), permission=0):
 
         super().__init__(dni, name, last_name, contact, address, permission)
         self.permission = permission
 
 
 class Operator(Person):
-    def __init__(self, dni: int = 0, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
-                 address: Address = Address(), permission = 1):
+    def __init__(self, dni: int = 1, name: str = 'Name', last_name: str = "LastName", contact: int = 0,
+                 address: Address = Address(), permission=1):
 
         super().__init__(dni, name, last_name, contact, address, permission)
         self.permission = permission
 
 
 if __name__ == '__main__':
-    person1 = Person(dni=1234567890, name="Luis", last_name="Pinto", contact=3155264684, address=Address, permission=1)
+    person1 = Person(dni=1234567890, name="Luis", last_name="Pinto", contact=3155264684,
+                     address=Address(), permission=1)
     print("\nPerson:")
     print(person1)
 

@@ -1,16 +1,16 @@
-from Buyer import Buyer
+from logic.Buyer import Buyer
 from datetime import datetime
-from Address import Address
-from Person import Person
-from Supplier import Supplier
-from Bill import Bill
-from Person import Operator
+from logic.Address import Address
+from logic.Person import Person
+from logic.Suplier import Suplier
+from logic.Bill import Bill
+from logic.Person import Operator
 from datetime import date
 
 
 class Deliver(object):
     """
-    class used to represent the deliver
+    class used to represent the delivery
     """
     def __init__(self, id_deliver: int = 1, date_t: date = date.today(), buyer: object = Buyer(),
                  buyer_add: object = Address(), operator: object = Operator(), operator_add: object = Address(),
@@ -211,7 +211,7 @@ class Deliver(object):
     def __str__(self):
         """
         Returns str of deliver
-        :returns: string with the deliver information
+        :returns: string with the delivery information
         :rtype: str
         """
         return '({0},{1},{2},{3},{4},{5},{6},{7},{8})'.format(self.__id_deliver, self.__date, self.__buyer,
