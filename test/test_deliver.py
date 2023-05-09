@@ -4,48 +4,53 @@ from logic.Address import Address
 from logic.Bill import Bill
 from logic.Buyer import Buyer
 from logic.Deliver import Deliver
-from logic.Person import Operator, Person
+from logic.Person import Person
+from logic.Operator import Operator
 from logic.Supplier import Supplier
 
 
 class TestDeliver(unittest.TestCase):
-    Deliver = Deliver()
+    deliver = Deliver()
 
     def test_instance(self):
-        self.assertIsInstance(self.Deliver, Deliver, "It's instance")
+        self.assertIsInstance(self.deliver, Deliver, "It's instance")
 
     def test_id_deliver(self):
-        self.assertEqual(self.Deliver.id_deliver, 1)
+        self.assertEqual(self.deliver.id_deliver, 1)
 
     def test_date(self):
-        self.assertIsInstance(self.Deliver.date, date)
+        self.assertEqual(self.deliver.date, date)
 
     def test_buyer(self):
-        self.assertIsInstance(self.Deliver.buyer, Buyer)
+        self.assertIsInstance(self.deliver.buyer, Buyer)
 
     def test_buyer_add(self):
-        self.assertIsInstance(self.Deliver.buyer_add, Address)
+        self.assertIsInstance(self.deliver.buyer_add, Address)
 
     def test_operator(self):
-        self.assertIsInstance(self.Deliver.operator, Operator)
+        self.assertIsInstance(self.deliver.operator, Operator)
 
     def test_operator_add(self):
-        self.assertIsInstance(self.Deliver.operator_add, Address)
+        self.assertIsInstance(self.deliver.operator_add, Address)
 
     def test_conveyor(self):
-        self.assertIsInstance(self.Deliver.conveyor, Supplier)
+        self.assertIsInstance(self.deliver.conveyor, Supplier)
 
     def test_contact(self):
-        self.assertIsInstance(self.Deliver.contact, Person)
+        self.assertIsInstance(self.deliver.contact, Person)
 
     def test_bill(self):
-        self.assertIsInstance(self.Deliver.bill, Bill)
+        self.assertIsInstance(self.deliver.bill, Bill)
 
     def test__str__(self):
-        self.assertEqual(self.Deliver.__str__(), '({0},{1},{2},{3},{4},{5},{6},{7},{8})'.format(1, date, Buyer(),
-                                                                                                Address, Operator(),
-                                                                                                Address(), Supplier(),
-                                                                                                Person(), Bill()))
+        self.assertEqual(self.deliver.__str__(), '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})'.format(1, date,
+                                                                                                        Buyer(),
+                                                                                                        Address(),
+                                                                                                        Operator(),
+                                                                                                        Address(),
+                                                                                                        Supplier(),
+                                                                                                        Person(),
+                                                                                                        Bill()))
 
 
 if __name__ == '__main__':

@@ -8,31 +8,31 @@ from logic.Payment_Method import PaymentMethod
 
 
 class TestBill(unittest.TestCase):
-    Bill = Bill()
+    bill = Bill()
 
     def test_instance(self):
-        self.assertIsInstance(self.Bill, Bill, "It's instance.")
+        self.assertIsInstance(self.bill, Bill, "It's instance.")
 
     def test_id_bill(self):
-        self.assertEqual(self.Bill.id_bill, 1)
+        self.assertEqual(self.bill.id_bill, 1)
 
     def test_description_purchase(self):
-        self.assertIsInstance(self.Bill.description_purchase, Purchase)
+        self.assertIsInstance(self.bill.description_purchase, Purchase)
 
     def test_seller(self):
-        self.assertIsInstance(self.Bill.seller, Person)
+        self.assertIsInstance(self.bill.seller, Person)
 
     def test_buyer(self):
-        self.assertIsInstance(self.Bill.buyer, Buyer)
+        self.assertIsInstance(self.bill.buyer, Buyer)
 
     def test_address_buyer(self):
-        self.assertIsInstance(self.Bill.address_buyer, Address)
+        self.assertIsInstance(self.bill.address_buyer, Address)
 
     def test_payment_method(self):
-        self.assertIsInstance(self.Bill.payment_method, PaymentMethod)
+        self.assertIsInstance(self.bill.payment_method, PaymentMethod)
 
     def test__str__(self):
-        self.assertEqual(self.Bill.__str__(), '({0}, {1}, {2}, {3}, {4}, {5})'.format(1, Purchase().__str__(),
+        self.assertEqual(self.bill.__str__(), '({0}, {1}, {2}, {3}, {4}, {5})'.format(1, Purchase().__str__(),
                                                                                       Person().__str__(),
                                                                                       Buyer().__str__(),
                                                                                       Address().__str__(),
