@@ -167,8 +167,8 @@ class Supplier(object):
         :rtype: str
         """
         return '({0}, {1}, {2}, {3}, {4}, {5}, {6},)'.format(self.__nit_supplier, self.__legal_name, self.__business_name,
-                                                       self.__contact, self.__bank__account, self.address_supplier,
-                                                       self.__information_vehicle)
+                                                             self.__contact, self.__bank__account, self.address_supplier,
+                                                             self.__information_vehicle)
 
     def __eq__(self, other):
         """
