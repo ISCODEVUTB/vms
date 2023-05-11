@@ -30,7 +30,7 @@ class Operator(Person):
         :rtype: Person
         """
         super().__init__(dni, name, last_name, contact, address, permission)
-        self.__authorization = authorization if authorization is None else authorization
+        self.__authorization = 0 if authorization is None else authorization
 
     @property
     def authorization(self) -> int:
@@ -48,7 +48,7 @@ class Operator(Person):
         :param authorization: permission of Operator.
         :type: int
         """
-        self.__authorization = authorization if authorization is None else authorization
+        self.__authorization = 0 if authorization is None else authorization
 
     def __str__(self):
         """

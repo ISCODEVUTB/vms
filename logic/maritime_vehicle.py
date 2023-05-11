@@ -169,7 +169,7 @@ if __name__ == '__main__':
     print(maritime_vehicle_1)
     print(maritime_vehicle_2)
 
-    if maritime_vehicle_1 == maritime_vehicle_1:
+    if maritime_vehicle_1 == maritime_vehicle_2:
         print(f'the vehicle with id: "{maritime_vehicle_1.id_vehicle}" is equal to the vehicle with id'
               f' "{maritime_vehicle_2.id_vehicle}"')
     else:
