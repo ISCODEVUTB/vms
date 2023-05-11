@@ -79,7 +79,7 @@ class Deliver(object):
         :param date_t: deadline
         :type date_t: datetime
         """
-        self.__date = date if datetime is None else date_t
+        self.__date = date if date is None else date_t
 
     @property
     def buyer(self) -> Buyer():
