@@ -1,12 +1,12 @@
 import unittest
 from datetime import date
-from logic.Address import Address
-from logic.Bill import Bill
-from logic.Buyer import Buyer
-from logic.Deliver import Deliver
-from logic.Person import Person
-from logic.Operator import Operator
-from logic.Supplier import Supplier
+from logic.address import Address
+from logic.bill import Bill
+from logic.buyer import Buyer
+from logic.deliver import Deliver
+from logic.person import Person
+from logic.operator import Operator
+from logic.supplier import Supplier
 
 
 class TestDeliver(unittest.TestCase):

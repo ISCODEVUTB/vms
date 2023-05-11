@@ -1,5 +1,5 @@
 import unittest
-from logic.Address import Address
+from logic.address import Address
 
 
 class TestAddress(unittest.TestCase):

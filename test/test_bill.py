@@ -1,10 +1,10 @@
 import unittest
-from logic.Purchase import Purchase
-from logic.Bill import Bill
-from logic.Person import Person
-from logic.Buyer import Buyer
-from logic.Address import Address
-from logic.Payment_Method import PaymentMethod
+from logic.purchase import Purchase
+from logic.bill import Bill
+from logic.person import Person
+from logic.buyer import Buyer
+from logic.address import Address
+from logic.payment_method import PaymentMethod
 
 
 class TestBill(unittest.TestCase):

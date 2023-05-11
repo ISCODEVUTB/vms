@@ -1,5 +1,5 @@
 import unittest
-from logic.Air_Vehicle import AirVehicle
+from logic.air_vehicle import AirVehicle
 
 
 class TestAirVehicle(unittest.TestCase):

@@ -1,8 +1,8 @@
 import unittest
-from logic.Purchase import Purchase
-from logic.Vehicle import Vehicle
-from logic.Buyer import Buyer
-from logic.Person import Person
+from logic.purchase import Purchase
+from logic.vehicle import Vehicle
+from logic.buyer import Buyer
+from logic.person import Person
 
 
 class TestPurchase(unittest.TestCase):

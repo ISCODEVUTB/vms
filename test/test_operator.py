@@ -1,6 +1,6 @@
 import unittest
-from logic.Address import Address
-from logic.Operator import Operator
+from logic.address import Address
+from logic.operator import Operator
 from test_person import TestPerson
 
 

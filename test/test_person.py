@@ -1,6 +1,6 @@
 import unittest
-from logic.Person import Person
-from logic.Address import Address
+from logic.person import Person
+from logic.address import Address
 
 
 class TestPerson(unittest.TestCase):

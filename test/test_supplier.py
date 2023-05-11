@@ -1,7 +1,7 @@
 import unittest
-from logic.Supplier import Supplier
-from logic.Address import Address
-from logic.Vehicle import Vehicle
+from logic.supplier import Supplier
+from logic.supplier import Address
+from logic.vehicle import Vehicle
 
 
 class TestSupplier(unittest.TestCase):

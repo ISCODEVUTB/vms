@@ -1,5 +1,5 @@
 import unittest
-from logic.Maritime_Vehicle import MaritimeVehicle
+from logic.maritime_vehicle import MaritimeVehicle
 
 
 class TestMaritimeVehicle(unittest.TestCase):

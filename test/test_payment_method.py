@@ -1,5 +1,5 @@
 import unittest
-from logic.Payment_Method import PaymentMethod
+from logic.payment_method import PaymentMethod
 
 
 class TestPaymentMethod(unittest.TestCase):
