@@ -141,3 +141,4 @@ class Purchase(object):
 if __name__ == '__main__':
     purchase = Purchase(10202, description=Vehicle(), cost=20000, buyer=Buyer(), seller=Person())
     print(purchase.__str__())
+    print("Esto es una prueba")
