@@ -214,8 +214,9 @@ class Deliver(object):
         :rtype: str
         """
         return '({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})'.format(self.__id_deliver, self.__date, self.__buyer,
-                                                              self.__buyer_add, self.__operator, self.__operator_add,
-                                                              self.__conveyor, self.__contact, self.__bill)
+                                                                      self.__buyer_add, self.__operator,
+                                                                      self.__operator_add,
+                                                                      self.__conveyor, self.__contact, self.__bill)
 
     def __eq__(self, other) -> bool:
         """

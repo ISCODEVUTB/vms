@@ -52,8 +52,8 @@ class Buyer(Person):
         :rtype: str
         """
         return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self._dni, self._name, self._last_name,
-                                                      self._contact, self._address, self._permission,
-                                                      self.__buy_date)
+                                                            self._contact, self._address, self._permission,
+                                                            self.__buy_date)
 
     def __eq__(self, other):
         """

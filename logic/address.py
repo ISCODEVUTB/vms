@@ -167,16 +167,20 @@ class Address(object):
         return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.__house_number, self.__apartment, self.__street,
                                                             self. __postal_code, self.__locality, self.__department,
                                                             self.__country)
-    
-    def __str__(self):
+
+    def __eq__(self, other) -> bool:
         """
-        Returns str of address.
-        :returns: sting person
-        :rtype: str
+        returns boolean value of equivalence between two address objects
+        :param other: another address object to compare
+        :type other: Address
+        :return: True or False
         """
-        return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.__house_number, self.__apartment, self.__street,
-                                                            self. __postal_code, self.__locality, self.__department,
-                                                            self.__country)
+        if isinstance(other, Address):
+            return (self.__house_number == other.__house_number and self.__country == self.__country and
+                    self.__street == other.__country and self.__locality == other.__locality and
+                    self.__apartment == other.__apartment and self.__postal_code == other.__postal_code)
+        else:
+            return False
 
 
 if __name__ == '__main__':

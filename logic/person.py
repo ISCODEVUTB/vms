@@ -145,6 +145,17 @@ class Person(object):
         return '({0}, {1}, {2}, {3}, {4}, {5})'.format(self._dni, self._name, self._last_name, self._contact,
                                                        self._address, self._permission)
 
+    def __eq__(self, other):
+        """
+        returns boolean value of equivalence between two objects as person
+        :param other: another person object
+        :type other: Person
+        :return: True or false
+        """
+        return (self._dni == other._dni and self._name == other._name and
+                self._last_name == other._last_name and self._address == other._address and
+                self._permission == other._permission)
+
 
 if __name__ == '__main__':
     person_1 = Person(dni=1234567890, name="Luis", last_name="Pinto", contact=3155264684,
