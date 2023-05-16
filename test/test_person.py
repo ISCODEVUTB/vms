@@ -27,3 +27,7 @@ class TestPerson(TestCase):
 
     def test_permission(self):
         self.assertEqual(self.person.permission, 0)
+
+    def test__str__(self):
+        self.assertEqual(self.__str__(), '({0}, {1}, {2}, {3}, {4}, {5})'.format(1, "Name", "Last name", 0,
+                                                                                 Address(), 0))

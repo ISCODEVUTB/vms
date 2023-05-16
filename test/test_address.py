@@ -29,3 +29,9 @@ class TestAddress(TestCase):
 
     def test_country(self):
         self.assertEqual(self.address.country, "Colombia")
+
+    def test__str__(self):
+        self.assertEqual(self.__str__(), '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(1, 0,  "street",
+                                                                                      "00000", "locality", "department",
+                                                                                      "country"))
+

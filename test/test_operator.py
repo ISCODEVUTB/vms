@@ -1,5 +1,4 @@
 from unittest import TestCase
-from logic.address import Address
 from logic.operator import Operator
 
 

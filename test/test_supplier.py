@@ -34,8 +34,9 @@ class TestSupplier(unittest.TestCase):
     def test__str__(self):
         return self.assertEqual(self.supplier.__str__(), '({0}, {1}, {2}, {3}, {4}, {5}, {6},)'.format(1, 'Legal name',
                                                                                                        'Business name',
-                                                                                                       "0", 1, Address()
-                                                                                                       , Vehicle()))
+                                                                                                       "0", 1,
+                                                                                                       Address(),
+                                                                                                       Vehicle()))
 
 
 if __name__ == '__main__':
