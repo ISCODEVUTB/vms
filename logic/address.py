@@ -167,6 +167,16 @@ class Address(object):
         return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.__house_number, self.__apartment, self.__street,
                                                             self. __postal_code, self.__locality, self.__department,
                                                             self.__country)
+    
+    def __str__(self):
+        """
+        Returns str of address.
+        :returns: sting person
+        :rtype: str
+        """
+        return '({0}, {1}, {2}, {3}, {4}, {5}, {6})'.format(self.__house_number, self.__apartment, self.__street,
+                                                            self. __postal_code, self.__locality, self.__department,
+                                                            self.__country)
 
 
 if __name__ == '__main__':
