@@ -16,7 +16,6 @@ class VehicleController(object):
             print(vehicle.__str__())
             f.seek(0)
             json.dump(data, f)
-        f.close()
         return vehicle.__str__()
 
     def show(self):
@@ -28,4 +27,22 @@ class VehicleController(object):
         with open(self.file) as f:
             data = json.load(f)
         vehicles = [vehicle for vehicle in data['vehicles'] if value in str(vehicle.values())]
+        return vehicles
+
+    def delete(self, value):
+        vehicles_del = self.compare(value)
+        print("Deleting:")
+        for vehicle in vehicles_del:
+            print(vehicle)
+
+        with open(self.file, 'r+') as f:
+            data = json.load(f)
+            vehicles = data.get('vehicles', [])
+            vehicles = [vehicle for vehicle in vehicles if vehicle not in vehicles_del]
+            data['vehicles'] = vehicles
+            f.seek(0)
+            json.dump(data, f, indent=4)
+            f.truncate()
+
+        print("Deletion completed.")
         return vehicles
