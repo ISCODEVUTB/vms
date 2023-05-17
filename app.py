@@ -5,8 +5,12 @@ from starlette.middleware.cors import CORSMiddleware
 from controller.vehicle_controller import VehicleController
 from logic.vehicle import Vehicle
 
+from controller.payment_method_controller import PaymentMethodController
+from logic.payment_method import PaymentMethod
+
 app = FastAPI()
 vh_c = VehicleController()
+pm_c = PaymentMethodController()
 
 origins = ["*"]
 
@@ -47,6 +51,21 @@ async def delete(value: str = Query(...)):
     vehicles = vh_c.delete(value)
     return vehicles
 
+
+@app.get("/api/payment_method")
+async def root():
+    return pm_c.show()
+
+
+@app.post("/api/payment_method")
+async def add(payment_method: str):
+    return pm_c.add(PaymentMethod(payment_method=payment_method))
+
+
+@app.post("/api/select_payment_method")
+async def select(value: str = Query(...)):
+    selected_payment = pm_c.select(value)
+    return selected_payment
 
 if __name__ == '__main__':
     uvicorn.run(app, port=33507)

@@ -176,7 +176,7 @@ class Address(object):
         :return: True or False
         """
         if isinstance(other, Address):
-            return (self.__house_number == other.__house_number and self.__country == self.__country and
+            return (self.__house_number == other.__house_number and self.__country == other.__country and
                     self.__street == other.__country and self.__locality == other.__locality and
                     self.__apartment == other.__apartment and self.__postal_code == other.__postal_code)
         else:
