@@ -42,8 +42,11 @@ async def compare_vehicle(value: str = Query(...)):
 @app.post("/api/vehicle")
 async def add(id_vehicle: int, model: str, description: str, brand: str, type_v: str, weight: float, age: int,
               price: float, status: str):
-    return vh_c.add(Vehicle(id_vehicle=id_vehicle, model=model, description=description, brand=brand, type_v=type_v,
-                            weight=weight, age=age, price=price, status=status))
+    if vh_c.compare(str(id_vehicle)):
+        return "A vehicle with the same ID already exists"
+    else:
+        return vh_c.add(Vehicle(id_vehicle=id_vehicle, model=model, description=description, brand=brand, type_v=type_v,
+                                weight=weight, age=age, price=price, status=status))
 
 
 @app.post("/api/delete_vehicle")
