@@ -1,17 +1,20 @@
 import uvicorn
 from fastapi import FastAPI, Query
 from starlette.middleware.cors import CORSMiddleware
-
 from controller.vehicle_controller import VehicleController
+from controller.shopping_cart_controller import ShoppingController
 from logic.vehicle import Vehicle
 
 from controller.payment_method_controller import PaymentMethodController
 from logic.payment_method import PaymentMethod
+import json
+import os
 
 app = FastAPI()
+p_c = ShoppingController()
 vh_c = VehicleController()
 pm_c = PaymentMethodController()
-
+vehicles_tb = []
 origins = ["*"]
 
 app.add_middleware(
@@ -69,6 +72,64 @@ async def add(payment_method: str):
 async def select(value: str = Query(...)):
     selected_payment = pm_c.select(value)
     return selected_payment
+
+
+@app.post("/api/buy")
+async def buy(vehicle_id: int = Query(...)):
+    vehicle = vh_c.compare(str(vehicle_id))
+
+    if vehicle:
+        vehicle_data = vehicle[0]
+        if not any(v['_id_vehicle'] == vehicle_id for v in vehicles_tb):
+            vehicles_tb.append({"_id_vehicle": vehicle_id, **vehicle_data})
+            return {"message": "Vehicle added to purchase list."}
+        else:
+            return {"message": "Vehicle already added to purchase list."}
+    else:
+        return {"message": "Vehicle not found."}
+
+
+@app.post("/api/purchase")
+async def purchase(dni: str = Query(...), confirm: bool = Query(...)):
+    global vehicles_tb
+    if confirm:
+        if not os.path.exists("data/purchase.json"):
+            with open("data/purchase.json", "w") as file:
+                file.write("{}")
+        with open("data/purchase.json", "r") as file:
+            purchase_data = json.load(file)
+        if dni in purchase_data:
+            for vehicle in vehicles_tb:
+                if not any(v['_id_vehicle'] == vehicle['_id_vehicle'] for v in purchase_data[dni]['vehicles']):
+                    purchase_data[dni]['vehicles'].append(vehicle)
+        else:
+            purchase_data[dni] = {"dni": dni, "vehicles": vehicles_tb}
+        with open("data/purchase.json", "w") as file:
+            json.dump(purchase_data, file)
+        vehicles_tb.clear()
+        return {"message": "Purchase done."}
+    else:
+        vehicles_tb.clear()
+        return {"message": "Purchase cancelled."}
+
+
+@app.get("/api/purchases_done")
+async def get_purchases():
+    purchases = p_c.show()
+    return purchases
+
+
+@app.post("/api/delete_purchase")
+async def delete_purchase(dni: str = Query(..., description="User's DNI"),
+                          id_v: str = Query(..., description="Vehicle ID")):
+    purchases = p_c.erase_vehicle(dni, id_v)
+    return {"message": purchases}
+
+
+@app.get("/api/select_purchase")
+async def select_purchase(dni: str = Query(...)):
+    purchases = p_c.select(dni)
+    return purchases
 
 if __name__ == '__main__':
     uvicorn.run(app, port=33507)
