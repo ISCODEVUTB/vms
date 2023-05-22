@@ -30,8 +30,3 @@ class PaymentMethodController(object):
             for payment_method in data['payment_methods']:
                 if value in str(payment_method.values()):
                     return payment_method.__str__()
-
-if __name__ == '__main__':
-    Prueba = PaymentMethodController()
-    Prueba.file = "C:\\Users\\ALBERTO JOSE\\PycharmProjects\\vms\\data\\payment.json"
-    print(Prueba.show())

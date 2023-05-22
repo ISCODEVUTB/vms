@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI, Query
 from starlette.middleware.cors import CORSMiddleware
 from controller.vehicle_controller import VehicleController
-from controller.shopping_cart_controller import ShoppingController
+from controller.shopping_controller import ShoppingController
 from logic.vehicle import Vehicle
 
 from controller.payment_method_controller import PaymentMethodController
